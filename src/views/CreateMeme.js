@@ -30,10 +30,10 @@ const CreateMeme = () => {
                 </div>
                 <div className="w-1/3">
                     <div>
-                        <label>Text 1</label>
+                        <label className="w-1/3">Text 1</label>
                         <input
                             type="text"
-                            className="rounded-lg my-2 mx-2"
+                            className="rounded-lg my-2 mx-2 w-1/3"
                             onChange={(e) => {
                                 setText1(e.target.value)
                             }}
@@ -41,18 +41,20 @@ const CreateMeme = () => {
                     </div>
 
                     <div>
-                        <label>Text 2 </label>
+                        <label className="w-1/3">Text 2</label>
                         <input
                             type="text"
-                            className="rounded-lg my-2 mx-2"
+                            className="rounded-lg my-2 mx-2 w-1/3"
                             onChange={(e) => {
                                 setText2(e.target.value)
                             }}
                         />
+                        <br />
                         <button
                             onClick={() => {
                                 handleMemeCreation()
                             }}
+                            className="w-1/3 text-dark-blue border border-dark-blue rounded-lg ml-4"
                         >
                             Get my meme
                         </button>
