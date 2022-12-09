@@ -34,11 +34,13 @@ const Home = () => {
                     memeDatas.length > 0 &&
                     memeDatas.map((meme) => {
                         return (
-                            <MemeCards
-                                id={meme.id}
-                                title={meme.name}
-                                image={meme.url}
-                            />
+                            <div key={meme.id}>
+                                <MemeCards
+                                    title={meme.name}
+                                    image={meme.url}
+                                    id={meme.id}
+                                />
+                            </div>
                         )
                     })}
             </div>
