@@ -15,7 +15,9 @@ const Home = () => {
 
     const memeId = useSelector(getMemeId)
 
-    console.log(memeId)
+    useEffect(() => {
+        console.log(memeId)
+    }, [memeId])
 
     return (
         <div>

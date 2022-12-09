@@ -3,8 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 export const memeSlice = createSlice({
     name: 'meme',
     initialState: {
-        id: '41',
+        id: '',
         url: '',
+        name: '',
     },
     reducers: {
         setMemeId: (state, action) => {
@@ -13,13 +14,20 @@ export const memeSlice = createSlice({
         setMemeUrl: (state, action) => {
             state.url = action.payload
         },
+        setMemeName: (state, action) => {
+            state.name = action.payload
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setMemeId, setMemeUrl } = memeSlice.actions
 
+//écriture
+export const { setMemeId, setMemeUrl, setMemeName } = memeSlice.actions
+
+//Lecture
 export const getMemeId = (state) => state.meme.id
 export const getMemeUrl = (state) => state.meme.url
+export const getMemeName = (state) => state.meme.name
 
 export default memeSlice.reducer
