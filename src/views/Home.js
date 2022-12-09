@@ -20,17 +20,19 @@ const Home = () => {
             <h2 className="bg-dark-blue rounded-lg w-1/3 mx-auto my-4 text-white text-center">
                 Choose your meme
             </h2>
-            {memeDatas &&
-                memeDatas.length > 0 &&
-                memeDatas.map((meme) => {
-                    return (
-                        <MemeCards
-                            id={meme.id}
-                            title={meme.name}
-                            image={meme.url}
-                        />
-                    )
-                })}
+            <div className="w-10/12 border border-dark-blue rounded-xl mx-auto flex flex-wrap justify-around flex-row bg-gray-light">
+                {memeDatas &&
+                    memeDatas.length > 0 &&
+                    memeDatas.map((meme) => {
+                        return (
+                            <MemeCards
+                                id={meme.id}
+                                title={meme.name}
+                                image={meme.url}
+                            />
+                        )
+                    })}
+            </div>
         </div>
     )
 }
