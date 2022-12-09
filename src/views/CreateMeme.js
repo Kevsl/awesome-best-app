@@ -1,11 +1,17 @@
 import { useSelector } from 'react-redux'
 import { getMemeId, getMemeName, getMemeUrl } from '../redux/meme'
 import { MemeCards } from '../components/MemeCards'
+import React, { useState } from 'react'
 
 const CreateMeme = () => {
     const id = useSelector(getMemeId)
     const url = useSelector(getMemeUrl)
     const name = useSelector(getMemeName)
+
+    const [text1, setText1] = useState('')
+    const [text2, setText2] = useState('')
+
+    function handleMemeCreation() {}
 
     return (
         <div>
@@ -20,28 +26,37 @@ const CreateMeme = () => {
                     <h2 className="bg-dark-blue rounded-lg w-1/3 mx-auto my-2 text-white">
                         Create your own meme with : {name}
                     </h2>
-                    <MemeCards
-                        id={id}
-                        name={name}
-                        image={url}
-                        className="mx-auto "
-                    />
+                    <MemeCards id={id} name={name} image={url} />
                 </div>
                 <div className="w-1/3">
-                    <input
-                        type="text"
-                        className="rounded-lg"
-                        onChange={(e) => {
-                            console.log(e.target.value)
-                        }}
-                    />
-                    <input
-                        type="text"
-                        className="rounded-lg"
-                        onChange={(e) => {
-                            console.log(e.target.value)
-                        }}
-                    />
+                    <div>
+                        <label>Text 1</label>
+                        <input
+                            type="text"
+                            className="rounded-lg my-2 mx-2"
+                            onChange={(e) => {
+                                setText1(e.target.value)
+                            }}
+                        />
+                    </div>
+
+                    <div>
+                        <label>Text 2 </label>
+                        <input
+                            type="text"
+                            className="rounded-lg my-2 mx-2"
+                            onChange={(e) => {
+                                setText2(e.target.value)
+                            }}
+                        />
+                        <button
+                            onClick={() => {
+                                handleMemeCreation()
+                            }}
+                        >
+                            Get my meme
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
