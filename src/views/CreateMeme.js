@@ -2,16 +2,21 @@ import { useSelector } from 'react-redux'
 import { getMemeId, getMemeName, getMemeUrl } from '../redux/meme'
 import { MemeCards } from '../components/MemeCards'
 import React, { useState } from 'react'
+import { getCreatedMeme } from '../services/meme'
 
 const CreateMeme = () => {
     const id = useSelector(getMemeId)
-    const url = useSelector(getMemeUrl)
+    const [url, setUrl] = useState(useSelector(getMemeUrl))
     const name = useSelector(getMemeName)
 
     const [text1, setText1] = useState('')
     const [text2, setText2] = useState('')
 
-    function handleMemeCreation() {}
+    function handleMemeCreation() {
+        getCreatedMeme(id, text1, text2).then((res) => {
+            console.log(res)
+        })
+    }
 
     return (
         <div>
