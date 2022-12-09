@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const memeSlice = createSlice({
     name: 'meme',
     initialState: {
-        id: '',
+        id: '41',
         url: '',
     },
     reducers: {
