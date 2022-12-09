@@ -9,12 +9,12 @@ const CreateMeme = () => {
     const [url, setUrl] = useState(useSelector(getMemeUrl))
     const name = useSelector(getMemeName)
 
+    const [text0, setText0] = useState('')
     const [text1, setText1] = useState('')
-    const [text2, setText2] = useState('')
 
     function handleMemeCreation() {
-        getCreatedMeme(id, text1, text2).then((res) => {
-            console.log(res)
+        getCreatedMeme(id, text0, text1).then((res) => {
+            setUrl(res)
         })
     }
 
@@ -40,7 +40,7 @@ const CreateMeme = () => {
                             type="text"
                             className="rounded-lg my-2 mx-2 w-1/3"
                             onChange={(e) => {
-                                setText1(e.target.value)
+                                setText0(e.target.value)
                             }}
                         />
                     </div>
@@ -51,7 +51,7 @@ const CreateMeme = () => {
                             type="text"
                             className="rounded-lg my-2 mx-2 w-1/3"
                             onChange={(e) => {
-                                setText2(e.target.value)
+                                setText1(e.target.value)
                             }}
                         />
                         <br />
