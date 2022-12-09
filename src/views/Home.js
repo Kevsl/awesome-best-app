@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { MemeCards } from '../components/MemeCards'
 import { getMemes } from '../services/meme'
 import { getMemeId } from '../redux/meme'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Home = () => {
     const [memeDatas, setMemeDatas] = useState([])
